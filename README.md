@@ -1,10 +1,10 @@
-# Welcome to your new ignited app!
+# Welcome to Ev.energy Coding Challenge!
 
 [![CircleCI](https://circleci.com/gh/infinitered/ignite.svg?style=svg)](https://circleci.com/gh/infinitered/ignite)
 
-## The latest and greatest boilerplate for Infinite Red opinions
 
-This is the boilerplate that [Infinite Red](https://infinite.red) uses as a way to test bleeding-edge changes to our React Native stack.
+
+This is based on react native expo
 
 Currently includes:
 
@@ -12,57 +12,6 @@ Currently includes:
 - React Navigation
 - MobX State Tree
 - TypeScript
-- And more!
-
-## Quick Start
-
-The Ignite boilerplate project's structure will look similar to this:
-
-```
-ignite-project
-├── app
-│   ├── components
-│   ├── config
-│   ├── i18n
-│   ├── models
-│   ├── navigators
-│   ├── screens
-│   ├── services
-│   ├── theme
-│   ├── utils
-│   ├── app.tsx
-├── test
-│   ├── __snapshots__
-│   ├── mockFile.ts
-│   ├── setup.ts
-├── README.md
-├── android
-│   ├── app
-│   ├── build.gradle
-│   ├── gradle
-│   ├── gradle.properties
-│   ├── gradlew
-│   ├── gradlew.bat
-│   ├── keystores
-│   └── settings.gradle
-├── ignite
-│   └── templates
-|       |── app-icon
-│       ├── component
-│       ├── model
-│       ├── navigator
-│       └── screen
-├── index.js
-├── ios
-│   ├── IgniteProject
-│   ├── IgniteProject-tvOS
-│   ├── IgniteProject-tvOSTests
-│   ├── IgniteProject.xcodeproj
-│   └── IgniteProjectTests
-├── .env
-└── package.json
-
-```
 
 ### ./app directory
 
@@ -84,47 +33,29 @@ app
 ├── app.tsx
 ```
 
-**components**
-This is where your reusable components live which help you build your screens.
+**Description**
+This app fetches a list of charging stations based on user locations and displays it in a list. From the list, you can click to start charging or get directions.
+Start charging starts an API call to send the request to ev energy backend.
+Directions button options map with the lat lng filled in so the user can get to the charging station.
+apisauce is used for API call 
+mobx to pass the data between components and maintain state. 
 
-**i18n**
-This is where your translations will live if you are using `react-native-i18n`.
+**Install**
+After cloning the project `yarn install` on the root directory.
 
-**models**
-This is where your app's models will live. Each model has a directory which will contain the `mobx-state-tree` model file, test file, and any other supporting files like actions, types, etc.
+**Launch**
+Use `npx expo run:android` to launch android project
+Use `npx expo run:ios` to launch iOS project
 
-**navigators**
-This is where your `react-navigation` navigators will live.
+**Test**
+Jest is used this project to run tests.
+Use `npx jest --watchAll` to run test.
 
-**screens**
-This is where your screen components will live. A screen is a React component which will take up the entire screen and be part of the navigation hierarchy. Each screen will have a directory containing the `.tsx` file, along with any assets or other helper files.
-
-**services**
-Any services that interface with the outside world will live here (think REST APIs, Push Notifications, etc.).
-
-**theme**
-Here lives the theme for your application, including spacing, colors, and typography.
-
-**utils**
-This is a great place to put miscellaneous helpers and utilities. Things like date helpers, formatters, etc. are often found here. However, it should only be used for things that are truly shared across your application. If a helper or utility is only used by a specific component or model, consider co-locating your helper with that component or model.
-
-**app.tsx** This is the entry point to your app. This is where you will find the main App component which renders the rest of the application.
-
-### ./ignite directory
-
-The `ignite` directory stores all things Ignite, including CLI and boilerplate items. Here you will find templates you can customize to help you get started with React Native.
-
-### ./test directory
-
-This directory will hold your Jest configs and mocks.
-
-## Running Detox end-to-end tests
-
-Read [Detox setup instructions](./detox/README.md).
-
-## Previous Boilerplates
-
-- [2018 aka Bowser](https://github.com/infinitered/ignite-bowser)
-- [2017 aka Andross](https://github.com/infinitered/ignite-andross)
-- [2016 aka Ignite 1.0](https://github.com/infinitered/ignite-ir-boilerplate-2016)
-
+**Things to Improve**
+Get optimized SVG icons for app or png in different sizes
+Clear back stack of navigation
+Accessibility testing and improvement
+Add manual enter location option.
+Allow users to pick and charge on individual connections at the station location.
+Handle charging API failure status better for user ease
+Add a charging station detail page so users can get more details and select individual charging points from the list available.
