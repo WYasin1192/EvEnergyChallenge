@@ -59,3 +59,4 @@ Add manual enter location option.
 Allow users to pick and charge on individual connections at the station location.
 Handle charging API failure status better for user ease
 Add a charging station detail page so users can get more details and select individual charging points from the list available.
+Split ChargingStationListScreen and charging ChargingStationCard into multiple files.
